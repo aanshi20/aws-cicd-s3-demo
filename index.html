@@ -1,7 +1,75 @@
+<!DOCTYPE html>
 <html>
+<head>
+<title>Friendship Welcome</title>
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        color: #fff;
+        text-shadow: 2px 2px 4px #000000;
+    }
+
+    body {
+        /* A friendly, animated background */
+        background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3R0c3RzZ2d5c25hZ2ZlZ3g2b2ZqZ3J6aGZ0a3NqNmZ0b2N0b3A0eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VduFvP3pT7J01a62n4/giphy.gif');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .container {
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+        padding: 30px;
+        border-radius: 15px;
+    }
+
+    input[type="text"] {
+        padding: 10px;
+        margin-right: 10px;
+        border-radius: 5px;
+        border: none;
+        width: 250px;
+    }
+
+    button {
+        padding: 10px 15px;
+        border-radius: 5px;
+        border: none;
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
 <body>
-<h1>Hello AWS CI/CD 🚀</h1>
-<h1>Hello Aanshika you have successfully created CI/CD Pipeline 🚀</h1>
-<p>Deployed using CodePipeline + CodeBuild + S3</p>
+    <div class="container">
+        <h1>Share a Friendly Message!</h1>
+        <p>Enter a message below and see the warm welcome.</p>
+        <input type="text" id="messageInput" placeholder="Type your message here...">
+        <button onclick="showMessage()">Send Welcome</button>
+    </div>
+
+    <script>
+        function showMessage() {
+            const userInput = document.getElementById('messageInput').value;
+            if (userInput.trim() === "") {
+                alert("Please enter a message first!");
+            } else {
+                const welcomeMessage = `🎉 A warm welcome to you! 🎉\n\nYou sent this friendly message:\n"${userInput}"`;
+                alert(welcomeMessage);
+            }
+        }
+    </script>
 </body>
 </html>
